@@ -1,0 +1,15 @@
+[Unit]
+Description=CO2_Monitor
+After=syslog.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/path/to/co2_monitor/app
+ExecStart=/path/to/python3 main.py 
+TimeoutStopSec=20
+StandardOutput=null
+Restart=always
+
+[Install]
+WantedBy = multi-user.target
